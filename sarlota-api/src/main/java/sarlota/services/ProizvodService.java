@@ -17,7 +17,7 @@ import java.util.List;
 public class ProizvodService {
 
     private final NarudzbaRepository narudzbaRepository;
-    //private final PonudaRepository ponudaRepository;
+    //private final PonudaRepository ponudaRepository; //Commented, can be used later if necessary
     private final ProizvodRepository proizvodRepository;
     private final PonudaRepository ponudaRepository;
 
@@ -31,16 +31,16 @@ public class ProizvodService {
 
     public Proizvod add(ProizvodDTO proizvodDTO) {
         Narudzba narudzba = narudzbaRepository.findById(proizvodDTO.getNarudzbaId()).orElse(null);
-        Ponuda ponuda = ponudaRepository.findById(proizvodDTO.getPonudaId()).orElse(null);
+        //Ponuda ponuda = ponudaRepository.findById(proizvodDTO.getPonudaId()).orElse(null);
 
-        if(narudzba == null || ponuda == null) {
-            return null;
-        }
+       // if(narudzba == null || ponuda == null) {
+       //     return null;
+       // }
         Proizvod proizvod = new Proizvod(
                 proizvodDTO.getKolicina(),
                 null,
                 narudzba,
-                ponuda
+                null //Can replace with ponuda if ponuda object is uncommented
         );
         return proizvodRepository.save(proizvod);
     }
