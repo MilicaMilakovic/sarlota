@@ -5,9 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 @Data
 @Entity
@@ -37,5 +35,4 @@ public class Ponuda {
     @JsonIgnore
     @OneToMany(mappedBy = "ponudaByPonudaId")
     private List<Recept> receptsById;
-
 }

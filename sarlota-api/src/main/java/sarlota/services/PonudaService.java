@@ -2,6 +2,7 @@ package sarlota.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import sarlota.entities.Ponuda;
 import sarlota.entities.dto.PonudaDTO;
 import sarlota.repositories.PonudaRepository;
 
@@ -22,17 +23,16 @@ public class PonudaService {
     }
 
     public Ponuda add(PonudaDTO ponudaDTO) {
-        Ponuda ponuda = new Ponuda(
-                null,
-                ponudaDTO.getNaziv(),
-                ponudaDTO.getOpis(),
-                ponudaDTO.getCijena(),
-                ponudaDTO.getTrenutnoRaspolozivo(),
-                ponudaDTO.getSlika(),
-                ponudaDTO.getTipProizvoda(),
-                null,
-                null
-                );
+        Ponuda ponuda = new Ponuda();
+
+        ponuda.setNaziv(ponudaDTO.getNaziv());
+        ponuda.setOpis(ponudaDTO.getNaziv());
+        ponuda.setCijena(ponudaDTO.getCijena());
+        ponuda.setTrenutnoRaspolozivo(ponudaDTO.getTrenutnoRaspolozivo());
+        ponuda.setSlika(ponudaDTO.getSlika());
+        ponuda.setTezina(ponudaDTO.getTezina());
+        ponuda.setTipProizvoda(ponudaDTO.getTipProizvoda());
+
 
         if(ponuda == null) {
             return null;
