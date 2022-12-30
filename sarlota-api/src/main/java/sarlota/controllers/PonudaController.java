@@ -13,11 +13,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/ponuda")
 @RequiredArgsConstructor
-public class PonudaKontaktController {
+public class PonudaController {
     private final PonudaService ponudaService;
 
     @GetMapping
-    public ResponseEntity<List<Kontakt>> getAll() {
+    public ResponseEntity<List<Ponuda>> getAll() {
         return ResponseEntity.ok(ponudaService.getAll());
     }
 
@@ -41,7 +41,7 @@ public class PonudaKontaktController {
     @PutMapping("/{id}")
     public ResponseEntity<Ponuda> update(@PathVariable int id, @RequestBody PonudaDTO ponudaDTO) {
         try {
-            Ponuda ponuda = ponudaService.update(id, kontaktDTO);
+            Ponuda ponuda = ponudaService.update(id, ponudaDTO);
             return ponuda == null ? ResponseEntity.status(HttpStatus.NOT_FOUND).build() : ResponseEntity.ok(ponuda);
         }
         catch (Exception e) {

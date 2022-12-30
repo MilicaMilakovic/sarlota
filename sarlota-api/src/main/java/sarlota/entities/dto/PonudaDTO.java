@@ -10,12 +10,12 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class KontaktDTO {
+public class PonudaDTO {
     private String naziv;
     private String opis;
     private BigDecimal cijena;
     private Integer trenutnoRaspolozivo;
     private String tezina;
     private byte[] slika;
-    private string tipProizvoda;
+    private String tipProizvoda;
 }

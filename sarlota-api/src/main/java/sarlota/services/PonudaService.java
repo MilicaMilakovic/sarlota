@@ -2,7 +2,6 @@ package sarlota.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import sarlota.entities.Ponuda;
 import sarlota.entities.dto.PonudaDTO;
 import sarlota.repositories.PonudaRepository;
 
@@ -10,7 +9,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class Ponuda {
+public class PonudaService {
 
     private final PonudaRepository ponudaRepository;
 
