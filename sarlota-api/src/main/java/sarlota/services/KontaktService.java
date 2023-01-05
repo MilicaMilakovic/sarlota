@@ -5,8 +5,6 @@ import org.springframework.stereotype.Service;
 import sarlota.entities.Kontakt;
 import sarlota.entities.Zaposleni;
 import sarlota.entities.dto.KontaktDTO;
-import sarlota.repositories.KontaktRepository;
-import sarlota.repositories.ZaposleniRepository;
 
 import java.util.List;
 
